@@ -1,18 +1,29 @@
 import HomeComponent from "./components/Home";
 import PageNotFoundComponent from "./components/PageNotFound";
-import './styles/styleapp.css'
+import LoginComponent from "./components/Login";
+import './styles/styleapp.scss'
 import {Routes,Route,useNavigate} from 'react-router-dom'
+
 const App = () => {
+    const navigate = useNavigate();
   return (
     <div className="App">
      <div id="navbar">
-       <div id="logo"></div>
-       <div id="navigate"></div>
+       <div id="logo" onClick={()=>navigate("/")}></div>
+       <div id="navigate">
+           <div onClick={()=>{navigate("/login")}}><i className="fa-solid fa-right-to-bracket"></i> Log In </div>
+           <div onClick={()=>{navigate("/login")}}><i className="fa-solid fa-user"></i> Sign Up </div>
+       </div>
      </div>
-     <Routes>
-         <Route path="/" element={<HomeComponent />} />
-         <Route path="*" element={<PageNotFoundComponent />} />
-     </Routes>
+     <div className="content">
+         <Routes>
+             <Route path="/login" element={<LoginComponent />}/>
+             <Route path={"/home"} element={<HomeComponent />} />
+             <Route path={"/"} element={<HomeComponent />} />
+             <Route path="*" element={<PageNotFoundComponent />} />
+         </Routes>
+     </div>
+
     </div>
   );
 }

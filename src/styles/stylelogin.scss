@@ -1,0 +1,29 @@
+.login{
+  height:100%;
+  display:flex;
+  width:100%;
+  justify-content: center;
+  align-items:center;
+  & input{
+    margin:1vw;
+    font-size:2vw;
+  }
+  & .loginform{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width:60%;
+    height:40%;
+    background-color: #afafaf;
+    font-size:2vw;
+  }
+  & InputComponent{
+    display:inline-block;
+  }
+  & button{
+    font-size:1vw;
+    width:40%;
+    height:8%;
+  }
+}

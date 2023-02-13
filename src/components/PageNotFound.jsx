@@ -1,8 +1,8 @@
 import React from 'react';
-import '../styles/stylenotfound.css'
+import '../styles/stylenotfound.scss'
 const PageNotFoundComponent = () => {
     return (
-        <div id='notfound'>
+        <div className="notfound">
             <img src={require('../imgs/404.png')} alt='Page Not Found'/>
         </div>
     );
