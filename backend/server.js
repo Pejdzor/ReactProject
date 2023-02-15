@@ -1,7 +1,8 @@
 const express = require("express")
 const cors = require("cors")
 const bodyParser = require("body-parser")
-const PORT = 4000
+require('dotenv').config()
+
 let app = express()
 
 app.use(cors())
@@ -14,6 +15,6 @@ app.get("/",(req,res)=>{
     res.send({status:"OK"})
 })
 
-app.listen(PORT,function(){
-    console.log("Backend API listening on port "+PORT)
+app.listen(process.env.PORT,function(){
+    console.log("Backend API listening on port "+process.env.PORT)
 })
